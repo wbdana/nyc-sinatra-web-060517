@@ -5,6 +5,10 @@
     <title>Add a landmark here!</title>
   </head>
   <body>
-
+    <form method="POST" action="/landmarks">
+      <p>Landmark Name: <input type="text" name="landmark[name]" id="landmark_name"></p>
+      <p>Year Completed: <input type="text" name="landmark[year_completed]" id="landmark_year_completed"</p>
+      <input type="submit" name="submit" value="Create New Landmark">
+    </form>
   </body>
 </html>

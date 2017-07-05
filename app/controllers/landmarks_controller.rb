@@ -2,15 +2,21 @@ class LandmarksController < ApplicationController
 
   set :views, 'app/views/landmarks/'
 
-    # get '/landmarks' do
-    #   erb :'/landmarks/new'
-    # end
-    #
-    # post '/landmarks/new' do
-    #   @landmark = Landmark.create(params)
-    #   erb :'/landmarks/'
-    # end
-    #
+    get '/landmarks' do
+      @landmarks = Landmark.all
+      erb :index
+    end
+
+    get '/landmarks/new' do
+      erb :new
+    end
+
+    post '/landmarks' do
+      # binding.pry
+      @landmark = Landmark.create(params[:landmark])
+      erb :show
+    end
+
     get '/landmarks/:id' do
       @landmark = Landmark.find_by(id: params[:id])
       erb :show
