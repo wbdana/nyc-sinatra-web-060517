@@ -6,8 +6,9 @@
   </head>
   <body>
     <h1><%= "#{@figure.name}" %></h1>
-    <% @figure.titles.each do |title| %>
-    <%= title.name %>
+
+    <% @landmarks.each do |landmark| %>
+    <%= "#{landmark.name}" %>
     <% end %>
 
   </body>
